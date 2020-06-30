@@ -8,7 +8,7 @@ class BaseInvoiceStrategy{
     calculateCredits(perf){
         return Math.max(perf.audience - 30, 0)
     }
-    createInvoice(perf){
+    calculateInvoice(perf){
         return {
             cost : this.calculateCost(perf),
             credits : this.calculateCredits(perf)

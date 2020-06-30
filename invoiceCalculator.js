@@ -11,7 +11,7 @@ class InvoiceCalculator{
         if(!strategy){
             throw new Error(`неизвестный тип: ${perf.type}`);
         }
-        return strategy.createInvoice(perf)
+        return strategy.calculateInvoice(perf)
     }
 }
 module.exports =  InvoiceCalculator 

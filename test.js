@@ -9,7 +9,7 @@ const comedyPerfomance = {
     "audience": 40,
     "type": "comedy"
     }
-console.log(comedyStrategy.createInvoice(comedyPerfomance))
+console.log(comedyStrategy.calculateInvoice(comedyPerfomance))
 // { cost: 62000, credits: 10 }
 
 const tragedyStrategy = new TragedyInvoiceStrategy()
@@ -18,7 +18,7 @@ const tragedyPerfomance = {
     "audience": 55,
     "type": "tragedy"
     }
-console.log(tragedyStrategy.createInvoice(tragedyPerfomance))
+console.log(tragedyStrategy.calculateInvoice(tragedyPerfomance))
 //{ cost: 65000, credits: 25 }
 
 

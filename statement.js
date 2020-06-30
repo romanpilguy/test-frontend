@@ -1,12 +1,12 @@
-const InvoiceCreator = require('./invoiceCreator.js')
+const InvoiceCalculator = require('./invoiceCalculator.js')
 const ComedyStrategy = require('./comedyInvoice.js')
 const TragedyStrategy = require('./tragedyInvoice.js')
 
 const plays = require('./plays.json') // Возможно plays и invoices должны быть разными таблицами, связанными по ключу playId
 
-const invoiceCreator = new InvoiceCreator()
-invoiceCreator.use(new ComedyStrategy())
-invoiceCreator.use(new TragedyStrategy())
+const invoiceCalculator = new InvoiceCalculator()
+invoiceCalculator.use(new ComedyStrategy())
+invoiceCalculator.use(new TragedyStrategy())
 
 function statement(invoice) {
     let totalAmount = 0;
@@ -23,7 +23,7 @@ function statement(invoice) {
         if (perf.type === 'comedy') {
             comedyCount ++
         }
-        const { cost, credits } = invoiceCreator.calculateInvoice(perf)
+        const { cost, credits } = invoiceCalculator.calculateInvoice(perf)
         totalAmount += cost
         volumeCredits += credits
     // Дополнительный бонус за каждые 10 комедий
